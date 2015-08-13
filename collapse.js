@@ -1,5 +1,5 @@
-import {events} from './events';
-import * as dom from './dom';
+import {events} from '../js.events/events';
+import * as dom from '../js.dom/dom';
 /**
  * @class Collapse
  * @classdesc JS collapsable panels
