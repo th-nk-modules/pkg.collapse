@@ -1,0 +1,55 @@
+/*
+Collapse
+
+accordion - accordion
+expand - expand
+hover - hover
+
+Markup:
+<ul class="collapse" data-collapse="collapse--{$modifiers}">
+    <li>
+        <div class="collapse_heading">heading 1</div>
+        <div class="collapse_content">1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    </li>   
+    <li>
+        <div class="collapse_heading">heading 2</div>
+        <div class="collapse_content">2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    </li>   
+    <li>
+        <div class="collapse_heading active">heading 3</div>
+        <div class="collapse_content">3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    </li>           
+</ul>
+
+Styleguide 0.x
+*/
+.collapse {
+    &--accordion,
+    &--expand,
+    &--hover {
+        .collapse_content {
+            overflow: hidden;
+            max-height: 0px;
+            transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) 0s;
+        }
+        .active ~ .collapse_content {
+            max-height: 99em;
+            transition-timing-function: cubic-bezier(0.5, 0, 1, 0);
+            transition-delay: 0s;
+        }
+    }
+}
+
+.collapse_heading {
+    &.active,
+    &:hover {
+        background: #eee;
+    }
+}
+
+.collapse--hover .collapse_heading:hover + .collapse_content,
+.collapse--hover .collapse_content:hover {
+    max-height: 99em;
+    transition-timing-function: cubic-bezier(0.5, 0, 1, 0);
+    transition-delay: 0s;
+}
