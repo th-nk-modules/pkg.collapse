@@ -1,16 +1,15 @@
 import {events} from '../js.events/events';
 import * as dom from '../js.dom/dom';
 /**
- * @class Collapse
- * @classdesc JS collapsable panels
- * accordion, expand, and hover panels
- */
+* @class Collapse
+* @classdesc JS collapsable panels
+* accordion, expand, and hover panels sd
+* @global
+*/
 class Collapse {
     /**
      * @constructor
-     * @param {string} strEvent Event type
-     * @param {Object} containers DOM element
-    */
+     */
     constructor(strEvent, containers) {
         this.eventAction = strEvent;
         this.containers = containers || document.querySelectorAll('.collapse');
@@ -39,7 +38,7 @@ class Collapse {
      * @memberOf Collapse
      * @param {object} container Parent .collapse DOM element
      * @param {number} i Index of parent
-    */
+     */
     expand(container, i) {
         let elms = container.querySelectorAll('.collapse_heading');
         this.elms.push(elms);
@@ -57,7 +56,7 @@ class Collapse {
      * @memberOf Collapse
      * @param {object} container Parent .collapse DOM element
      * @param {number} i Index of parent
-    */
+     */
     accordion(container, i) {
         let elms = container.querySelectorAll('.collapse_heading');
         this.elms[i] = elms;
